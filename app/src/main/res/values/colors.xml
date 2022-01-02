@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="Golden">#FFEA00</color>
+    <color name="TheLightBlue">#C8FFFF</color>
+    <color name="blue">#00E5FF</color>
+    <color name="pink">#FF7BAC</color>
+    <color name="darkerBlue">#29ABE2</color>
+    <color name="lightblue">#2FD1DD</color>
+    <color name="superlightblue">#00FFFF</color>
+    <color name="bronze">#cd7f32</color>
+    <color name="silver">#CCCCCC</color>
+</resources>

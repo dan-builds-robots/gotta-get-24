@@ -1,0 +1,1024 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_gravity="center"
+    tools:context="daniel.TrainMode">
+
+    <ImageView
+        android:id="@+id/bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/sky" />
+
+    <ImageView
+        android:id="@+id/scoreBg"
+        android:layout_width="72dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:alpha=".05"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/score_bg" />
+
+    <ImageView
+        android:id="@+id/keyboardBg"
+        android:layout_width="415dp"
+        android:layout_height="254dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dashBg"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/kb_bg" />
+
+    <ImageView
+        android:id="@+id/dashBg"
+        android:layout_width="364dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/get24Top"
+        app:srcCompat="@drawable/dash_bg" />
+
+    <ImageView
+        android:id="@+id/redDashBg"
+        android:layout_width="364dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="32dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/get24Top"
+        app:srcCompat="@drawable/red_dashbg" />
+
+    <ImageView
+        android:id="@+id/greenDashBg"
+        android:layout_width="364dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="32dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/get24Top"
+        app:srcCompat="@drawable/green_dashbg" />
+
+    <ImageView
+        android:id="@+id/trainHome"
+        android:layout_width="51dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:onClick="goHome"
+        android:tag="homeBtn"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home" />
+
+    <ImageView
+        android:id="@+id/playHome"
+        android:layout_width="51dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:onClick="goHome"
+        android:tag="homeBtn"
+        app:layout_constraintStart_toEndOf="@+id/scoreBg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home" />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/dash"-->
+<!--        android:layout_width="70dp"-->
+<!--        android:layout_height="9dp"-->
+<!--        android:layout_marginStart="12dp"-->
+<!--        android:layout_marginLeft="12dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/dashBg"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/dashBg"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/dashBg"-->
+<!--        app:layout_constraintVertical_bias="0.8"-->
+<!--        app:srcCompat="@drawable/dash" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/dash2"-->
+<!--        android:layout_width="70dp"-->
+<!--        android:layout_height="9dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/dashBg"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/dashBg"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/dash3"-->
+
+<!--        app:layout_constraintTop_toTopOf="@+id/dashBg"-->
+<!--        app:layout_constraintVertical_bias="0.8"-->
+<!--        app:srcCompat="@drawable/dash" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/dash3"-->
+<!--        android:layout_width="70dp"-->
+<!--        android:layout_height="9dp"-->
+<!--        android:layout_marginStart="32dp"-->
+<!--        android:layout_marginLeft="32dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/dashBg"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/dash4"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/dashBg"-->
+<!--        app:layout_constraintVertical_bias="0.8"-->
+<!--        app:srcCompat="@drawable/dash" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/dash4"-->
+<!--        android:layout_width="70dp"-->
+<!--        android:layout_height="9dp"-->
+<!--        android:layout_marginStart="12dp"-->
+<!--        android:layout_marginLeft="12dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/dashBg"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/dash"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/dashBg"-->
+<!--        app:layout_constraintVertical_bias="0.8"-->
+<!--        app:srcCompat="@drawable/dash" />-->
+
+    <TextView
+        android:id="@+id/get24Top"
+        android:layout_width="295dp"
+        android:layout_height="143dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/gill_sans_ultra_bold_condensed"
+        android:text="Get 24"
+        android:textColor="@color/darkerBlue"
+        android:textSize="100sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/get24Bot"
+        android:layout_width="295dp"
+        android:layout_height="143dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/gill_sans_ultra_bold_condensed"
+        android:text="Get 24"
+        android:textColor="@color/blue"
+        android:textSize="100sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/countdownTop"
+        android:layout_width="187dp"
+        android:layout_height="131dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/gill_sans_ultra_bold_condensed"
+        android:gravity="center"
+        android:text="3"
+        android:textColor="@color/darkerBlue"
+        android:textSize="100sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/countdownBot"
+        android:layout_width="177dp"
+        android:layout_height="129dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/gill_sans_ultra_bold_condensed"
+        android:gravity="center"
+        android:text="3"
+        android:textColor="@color/blue"
+        android:textSize="100sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/scoreG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/gill_sans_ultra_bold_condensed"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/Golden"
+        android:textSize="80sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/scoreBg"
+        app:layout_constraintEnd_toEndOf="@+id/scoreBg"
+        app:layout_constraintStart_toStartOf="@+id/scoreBg"
+        app:layout_constraintTop_toBottomOf="@+id/scoreBg"
+        app:layout_constraintVertical_bias="0.52" />
+
+    <TextView
+        android:id="@+id/scoreW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/gill_sans_ultra_bold_condensed"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="80sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/scoreG"
+        app:layout_constraintEnd_toEndOf="@+id/scoreG"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="@+id/scoreG"
+        app:layout_constraintTop_toTopOf="@+id/scoreG"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <TextView
+        android:id="@+id/skipsLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gill_sans_ultra_bold_condensed"
+        android:text="2 Skips Left"
+        android:textColor="@color/darkerBlue"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/keyboardBg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dashBg"
+        app:layout_constraintVertical_bias=".5" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/keyboard"
+        android:layout_width="400dp"
+        android:layout_height="180dp"
+        android:gravity="center"
+        android:numColumns="5"
+        app:layout_constraintBottom_toBottomOf="@+id/keyboardBg"
+        app:layout_constraintEnd_toEndOf="@+id/keyboardBg"
+        app:layout_constraintStart_toStartOf="@+id/keyboardBg"
+        app:layout_constraintTop_toTopOf="@+id/keyboardBg">
+
+
+        <ImageView
+            android:id="@+id/buttonNum1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:onClick="updateEquationOnScreen"
+            android:tag="number0"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="0"
+            app:layout_rowWeight="1"
+            app:srcCompat="@drawable/button" />
+
+        <ImageView
+            android:id="@+id/buttonNum2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:onClick="updateEquationOnScreen"
+            android:tag="number1"
+            app:layout_column="1"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="0"
+            app:layout_rowWeight="1"
+            app:srcCompat="@drawable/button" />
+
+
+        <ImageView
+            android:id="@+id/buttonNum3"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:onClick="updateEquationOnScreen"
+            android:tag="number2"
+            app:layout_column="2"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="0"
+            app:layout_rowWeight="1"
+            app:srcCompat="@drawable/button" />
+
+
+        <ImageView
+            android:id="@+id/buttonNum4"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:onClick="updateEquationOnScreen"
+            android:tag="number3"
+            app:layout_column="3"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="0"
+            app:layout_rowWeight="1"
+            app:srcCompat="@drawable/button" />
+
+
+        <ImageView
+            android:id="@+id/questionBtn"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:onClick="revealAnswer"
+            app:layout_column="4"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="0"
+            app:layout_rowWeight="1"
+            app:srcCompat="@drawable/button" />
+
+        <ImageView
+            android:id="@+id/plusBtn"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:onClick="updateEquationOnScreen"
+            android:tag="plus"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="1"
+            app:layout_rowWeight="1"
+            app:srcCompat="@drawable/button" />
+
+
+        <ImageView
+            android:id="@+id/minusBtn"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:onClick="updateEquationOnScreen"
+            android:tag="minus"
+            app:layout_column="1"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="1"
+            app:layout_rowWeight="1"
+            app:srcCompat="@drawable/button" />
+
+
+        <ImageView
+            android:id="@+id/multiBtn"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:onClick="updateEquationOnScreen"
+            android:tag="multiply"
+            app:layout_column="2"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="1"
+            app:layout_rowWeight="1"
+            app:srcCompat="@drawable/button" />
+
+
+        <ImageView
+            android:id="@+id/divBtn"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:onClick="updateEquationOnScreen"
+            android:tag="divide"
+            app:layout_column="3"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="1"
+            app:layout_rowWeight="1"
+            app:srcCompat="@drawable/button" />
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:onClick="delete"
+            app:layout_column="4"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_row="1"
+            app:layout_rowWeight="1"
+            app:srcCompat="@drawable/button" />
+
+        <ImageView
+            android:id="@+id/backArrow"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            app:layout_column="4"
+            app:layout_columnWeight="1"
+            app:layout_gravity="center"
+            app:layout_row="1"
+            app:layout_rowWeight="1"
+            app:srcCompat="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/plus"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_gravity="center"
+            app:layout_row="1"
+            app:layout_rowWeight="1"
+            app:srcCompat="@drawable/add" />
+
+        <ImageView
+            android:id="@+id/sub"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            app:layout_column="1"
+            app:layout_columnWeight="1"
+            app:layout_gravity="center"
+            app:layout_row="1"
+            app:layout_rowWeight="1"
+            app:srcCompat="@drawable/subtract" />
+
+        <ImageView
+            android:id="@+id/multiply"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_column="2"
+            app:layout_columnWeight="1"
+            app:layout_gravity="center"
+            app:layout_row="1"
+            app:layout_rowWeight="1"
+            app:srcCompat="@drawable/multiply" />
+
+        <ImageView
+            android:id="@+id/divide"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            app:layout_column="3"
+            app:layout_columnWeight="1"
+            app:layout_gravity="center"
+            app:layout_row="1"
+            app:layout_rowWeight="1"
+            app:srcCompat="@drawable/divide" />
+
+        <TextView
+            android:id="@+id/num1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/franklin_gothic_heavy_regular"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:text="1"
+            android:tag="zero"
+            android:textColor="@android:color/background_light"
+            android:textSize="50sp"
+            app:layout_column="0"
+            app:layout_columnWeight="1"
+            app:layout_gravity="center"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/num2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/franklin_gothic_heavy_regular"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:text="2"
+            android:tag="one"
+            android:textColor="@android:color/background_light"
+            android:textSize="50sp"
+            app:layout_column="1"
+            app:layout_columnWeight="1"
+            app:layout_gravity="center"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/num3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/franklin_gothic_heavy_regular"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:text="3"
+            android:tag="two"
+            android:textColor="@android:color/background_light"
+            android:textSize="50sp"
+            app:layout_column="2"
+            app:layout_columnWeight="1"
+            app:layout_gravity="center"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/num4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/franklin_gothic_heavy_regular"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:text="4"
+            android:tag="three"
+            android:textColor="@android:color/background_light"
+            android:textSize="50sp"
+            app:layout_column="3"
+            app:layout_columnWeight="1"
+            app:layout_gravity="center"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/franklin_gothic_heavy_regular"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:text="?"
+            android:textColor="@android:color/background_light"
+            android:textSize="50sp"
+            app:layout_column="4"
+            app:layout_columnWeight="1"
+            app:layout_gravity="center"
+            app:layout_row="0"
+            app:layout_rowWeight="1" />
+
+    </androidx.gridlayout.widget.GridLayout>
+
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="360sp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:numColumns="6"
+        app:layout_constraintBottom_toBottomOf="@+id/dashBg"
+        app:layout_constraintEnd_toEndOf="@+id/dashBg"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/dashBg"
+        app:layout_constraintTop_toTopOf="@+id/dashBg"
+        app:layout_constraintVertical_bias="0.5">
+
+        <TextView
+            android:id="@+id/guessedNum1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_columnWeight="1"
+            android:fontFamily="@font/franklin_gothic_heavy_regular"
+            android:gravity="center"
+            app:layout_rowWeight="1"
+            android:tag="number"
+            android:text="0"
+            android:textColor="@color/lightblue"
+            android:textSize="50sp"
+            app:layout_column="0"
+            app:layout_gravity="center"
+            app:layout_row="0" />
+
+        <ImageView
+            android:id="@+id/mathSymbol1"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            app:layout_columnWeight="1"
+            android:gravity="center"
+            app:layout_rowWeight="1"
+            android:tag="math_symbol"
+            android:tint="@color/lightblue"
+            app:layout_column="1"
+            app:layout_gravity="center"
+            app:layout_row="0"
+            app:srcCompat="@drawable/add" />
+
+        <TextView
+            android:id="@+id/guessedNum2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_columnWeight="1"
+            android:fontFamily="@font/franklin_gothic_heavy_regular"
+            android:gravity="center"
+            app:layout_rowWeight="1"
+            android:tag="number"
+            android:text="3"
+            android:textColor="@color/lightblue"
+            android:textSize="50sp"
+            app:layout_column="2"
+            app:layout_gravity="center"
+            app:layout_row="0" />
+
+        <ImageView
+            android:id="@+id/mathSymbol2"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            app:layout_columnWeight="1"
+            android:gravity="center"
+            app:layout_rowWeight="1"
+            android:tag="math_symbol"
+            android:tint="@color/lightblue"
+            app:layout_column="3"
+            app:layout_gravity="center"
+            app:layout_row="0"
+            app:srcCompat="@drawable/add" />
+
+        <TextView
+            android:id="@+id/guessedNum3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_columnWeight="1"
+            android:fontFamily="@font/franklin_gothic_heavy_regular"
+            android:gravity="center"
+            app:layout_rowWeight="1"
+            android:tag="number"
+            android:text="4"
+            android:textColor="@color/lightblue"
+            android:textSize="50sp"
+            app:layout_column="4"
+            app:layout_gravity="center"
+            app:layout_row="0" />
+
+
+        <ImageView
+            android:id="@+id/mathSymbol3"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            app:layout_columnWeight="1"
+            android:gravity="center"
+            app:layout_rowWeight="1"
+            android:tag="math_symbol"
+            android:tint="@color/lightblue"
+            app:layout_column="5"
+            app:layout_gravity="center"
+            app:layout_row="0"
+            app:srcCompat="@drawable/add" />
+
+        <TextView
+            android:id="@+id/guessedNum4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_columnWeight="1"
+            android:fontFamily="@font/franklin_gothic_heavy_regular"
+            android:gravity="center"
+            app:layout_rowWeight="1"
+            android:tag="number"
+            android:text="1"
+            android:textColor="@color/lightblue"
+            android:textSize="50sp"
+            app:layout_column="6"
+            app:layout_gravity="center"
+            app:layout_row="0" />
+
+        <ImageView
+            android:id="@+id/dash"
+            android:layout_width="70dp"
+            android:layout_height="9dp"
+            android:layout_margin="1dp"
+            android:gravity="center"
+            app:layout_column="0"
+            app:layout_gravity="center"
+            app:layout_row="1"
+            app:srcCompat="@drawable/dash" />
+
+        <ImageView
+            android:id="@+id/dash2"
+            android:layout_width="70dp"
+            android:layout_height="9dp"
+            android:layout_margin="1dp"
+            android:gravity="center"
+            app:layout_column="2"
+            app:layout_gravity="center"
+            app:layout_row="1"
+            app:srcCompat="@drawable/dash" />
+
+        <ImageView
+            android:id="@+id/dash3"
+            android:layout_width="70dp"
+            android:layout_height="9dp"
+            android:layout_margin="1dp"
+            android:gravity="center"
+            app:layout_column="4"
+            app:layout_gravity="center"
+            app:layout_row="1"
+            app:srcCompat="@drawable/dash" />
+
+        <ImageView
+            android:id="@+id/dash4"
+            android:layout_width="70dp"
+            android:layout_height="9dp"
+            android:layout_margin="1dp"
+            android:gravity="center"
+            app:layout_column="6"
+            app:layout_gravity="center"
+            app:layout_row="1"
+            app:srcCompat="@drawable/dash" />
+
+    </androidx.gridlayout.widget.GridLayout>
+
+<!--    <TextView-->
+<!--        android:id="@+id/guessedNum1"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/franklin_gothic_heavy_regular"-->
+<!--        android:tag="number"-->
+<!--        android:text="0"-->
+<!--        android:textColor="@color/lightblue"-->
+<!--        android:textSize="50sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/dash"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/dash"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/dash"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/dashBg"-->
+<!--        app:layout_constraintVertical_bias="1.0" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/mathSymbol1"-->
+<!--        android:layout_width="23dp"-->
+<!--        android:layout_height="23dp"-->
+<!--        android:tag="math_symbol"-->
+<!--        android:tint="@color/lightblue"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/dash"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/dash4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/dash"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/guessedNum1"-->
+<!--        app:layout_constraintVertical_bias="0.59000003"-->
+<!--        app:srcCompat="@drawable/add" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/mathSymbol3"-->
+<!--        android:layout_width="23dp"-->
+<!--        android:layout_height="23dp"-->
+<!--        android:tag="math_symbol"-->
+<!--        android:tint="@color/lightblue"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/dash3"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guessedNum4"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/guessedNum3"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/guessedNum3"-->
+<!--        app:layout_constraintVertical_bias="0.59000003"-->
+<!--        app:srcCompat="@drawable/add" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/mathSymbol2"-->
+<!--        android:layout_width="23dp"-->
+<!--        android:layout_height="23dp"-->
+<!--        android:tag="math_symbol"-->
+<!--        android:tint="@color/lightblue"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/dash4"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/dash3"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/dash4"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/guessedNum2"-->
+<!--        app:layout_constraintVertical_bias="0.59000003"-->
+<!--        app:srcCompat="@drawable/add" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/guessedNum4"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/franklin_gothic_heavy_regular"-->
+<!--        android:tag="number"-->
+<!--        android:text="1"-->
+<!--        android:textColor="@color/lightblue"-->
+<!--        android:textSize="50sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/dash"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/dash2"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/dash2"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/dashBg"-->
+<!--        app:layout_constraintVertical_bias="1.0" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/guessedNum2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/franklin_gothic_heavy_regular"-->
+<!--        android:tag="number"-->
+<!--        android:text="3"-->
+<!--        android:textColor="@color/lightblue"-->
+<!--        android:textSize="50sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/dash"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/dash4"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/dash4"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/dashBg"-->
+<!--        app:layout_constraintVertical_bias="1.0" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/guessedNum3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/franklin_gothic_heavy_regular"-->
+<!--        android:tag="number"-->
+<!--        android:text="4"-->
+<!--        android:textColor="@color/lightblue"-->
+<!--        android:textSize="50sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/dash"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/dash3"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/dash3"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/dashBg"-->
+<!--        app:layout_constraintVertical_bias="1.0" />-->
+
+
+    <daniel.ajayi.gottaget24.DonutProgress
+        android:id="@+id/countdown_progress"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:donut_circle_starting_degree="270"
+        app:donut_text_color="@color/darkerBlue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        custom:donut_max="90"
+        custom:donut_progress="90" />
+
+    <ImageView
+        android:id="@+id/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha=".5"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        custom:srcCompat="@drawable/black" />
+
+    <ImageView
+        android:id="@+id/okBtn"
+        android:layout_width="141dp"
+        android:layout_height="77dp"
+        android:onClick="goHome"
+        android:tag="okBtn"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/bg"
+        app:layout_constraintTop_toBottomOf="@+id/bigScore"
+        app:layout_constraintVertical_bias="0.13"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:srcCompat="@drawable/ok_btn" />
+
+    <TextView
+        android:id="@+id/youScoredTxt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"
+        android:fontFamily="@font/gill_sans_ultra_bold_condensed"
+        android:text="You Scored"
+        android:textColor="@color/darkerBlue"
+        android:textSize="62sp"
+        app:layout_constraintBottom_toTopOf="@id/youScoredTxt"
+        app:layout_constraintEnd_toEndOf="@id/youScoredTxt"
+        app:layout_constraintStart_toStartOf="@id/youScoredTxt"
+        app:layout_constraintTop_toTopOf="@id/youScoredTxt"
+        app:layout_constraintVertical_bias=".5" />
+
+    <TextView
+        android:id="@+id/youScoredTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:fontFamily="@font/gill_sans_ultra_bold_condensed"
+        android:text="You Scored"
+        android:textColor="@color/superlightblue"
+        android:textSize="62sp"
+        app:layout_constraintBottom_toTopOf="@+id/bigScore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bg"
+        app:layout_constraintVertical_bias="0.89" />
+
+
+    <TextView
+        android:id="@+id/bigScore2"
+        android:layout_width="wrap_content"
+        android:layout_height="168dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"
+        android:fontFamily="@font/gill_sans_ultra_bold_condensed"
+        android:text="0"
+        android:textColor="@android:color/background_light"
+        android:textSize="150sp"
+        app:layout_constraintBottom_toBottomOf="@id/bigScore"
+        app:layout_constraintEnd_toEndOf="@id/bigScore"
+        app:layout_constraintStart_toStartOf="@id/bigScore"
+        app:layout_constraintTop_toTopOf="@id/bigScore"
+        app:layout_constraintVertical_bias="0.49" />
+
+    <TextView
+        android:id="@+id/bigScore"
+        android:layout_width="wrap_content"
+        android:layout_height="168dp"
+        android:visibility="invisible"
+        android:fontFamily="@font/gill_sans_ultra_bold_condensed"
+        android:text="0"
+        android:textColor="@color/Golden"
+        android:textSize="150sp"
+        app:layout_constraintVertical_bias=".5"
+        custom:layout_constraintBottom_toTopOf="@+id/okBtn"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="@+id/youScoredTxt" />
+
+    <TextView
+        android:id="@+id/okTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:fontFamily="@font/gill_sans_ultra_bold_condensed"
+        android:text="OK"
+        android:textColor="@android:color/background_light"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/okBtn"
+        app:layout_constraintEnd_toEndOf="@+id/okBtn"
+        app:layout_constraintStart_toStartOf="@+id/okBtn"
+        app:layout_constraintTop_toTopOf="@+id/okBtn" />
+
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/linearLayout"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="12dp"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/dashBg"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/dashBg"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/dashBg"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/dashBg"-->
+<!--        app:layout_constraintVertical_bias="0.85">-->
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/dash"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="9dp"-->
+<!--            android:layout_weight="1"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/dashBg"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/dashBg"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/dashBg"-->
+<!--            app:layout_constraintVertical_bias="0.8"-->
+<!--            app:srcCompat="@drawable/dash" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/dash2"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="9dp"-->
+<!--            android:layout_weight="1"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/dashBg"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/dashBg"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/dash3"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/dashBg"-->
+<!--            app:layout_constraintVertical_bias="0.8"-->
+<!--            app:srcCompat="@drawable/dash" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/dash3"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="9dp"-->
+<!--            android:layout_weight="1"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/dashBg"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/dash4"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/dashBg"-->
+<!--            app:layout_constraintVertical_bias="0.8"-->
+<!--            app:srcCompat="@drawable/dash" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/dash4"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="9dp"-->
+<!--            android:layout_weight="1"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/dashBg"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/dash"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/dashBg"-->
+<!--            app:layout_constraintVertical_bias="0.8"-->
+<!--            app:srcCompat="@drawable/dash" />-->
+
+<!--    </LinearLayout>-->
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
